@@ -8,12 +8,12 @@ type singleItemProps = {
 }
 const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price}) => {
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 bg-white p-4 rounded-lg">
             <div className="flex align-center justify-center h-40">
                 <img 
                     src={image}
                     alt="Image"
-                    className="border-r-2 object-contain"
+                    className="border-r-2 object-contain border-none"
                 />
             </div>
             <span className="text-2xl font-bold ">{name}</span>

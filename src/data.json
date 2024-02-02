@@ -3,73 +3,73 @@
         {
             "id": 1,
             "name": "Backpack",
-            "image": "/images/backpack.jpg",
+            "image": "/images/backpack.png",
             "price": 10
         },
         {
             "id": 2,
             "name": "Cup",
-            "image": "/images/cup.jpg",
+            "image": "/images/cup.png",
             "price": 5
         },
         {
             "id": 3,
             "name": "Gaming Chair",
-            "image": "/images/gamingchair.jpg",
+            "image": "/images/gamingchair.png",
             "price": 300
         },
         {
             "id": 4,
             "name": "Gaming Headset",
-            "image": "/images/gamingheadset.jpg",
+            "image": "/images/gamingheadset.png",
             "price": 150
         },
         {
             "id": 5,
             "name": "Ipad",
-            "image": "/images/ipad.jpg",
+            "image": "/images/ipad.png",
             "price": 800
         },
         {
             "id": 6,
             "name": "Knifeset",
-            "image": "/images/knifeset.jpg",
+            "image": "/images/knifeset.png",
             "price": 80
         },
         {
             "id": 7,
             "name": "Laptop",
-            "image": "/images/laptop.jpg",
+            "image": "/images/laptop.png",
             "price": 600
         },
         {
             "id": 8,
             "name": "Laptop Table",
-            "image": "/images/laptoptable.jpg",
+            "image": "/images/laptoptable.png",
             "price": 40
         },
         {
             "id": 9,
             "name": "Note Book",
-            "image": "/images/notebook.jpg",
+            "image": "/images/notebook.png",
             "price": 10
         },
         {
             "id": 10,
             "name": "Shampoo",
-            "image": "/images/shampoo.jpg",
+            "image": "/images/shampoo.png",
             "price": 30
         },
         {
             "id": 11,
             "name": "Shirt",
-            "image": "/images/shirt.jpg",
+            "image": "/images/shirt.png",
             "price": 20
         },
         {
             "id": 12,
             "name": "Sneakers",
-            "image": "/images/sneakers.jpg",
+            "image": "/images/sneakers.png",
             "price": 100
         }
     ]

@@ -6,6 +6,9 @@
     @apply active:text-white select-none;
 } */
 
+body {
+    background-color: rgb(238, 238, 238);
+}
 a.active {
     color: white;
 }
