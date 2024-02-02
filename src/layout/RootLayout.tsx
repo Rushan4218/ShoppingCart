@@ -1,6 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
+import StoreItem from "../components/StoreItem";
+
 const RootLayout = () => {
     return (
         <div>
@@ -9,7 +11,7 @@ const RootLayout = () => {
                 <NavLink to="store" className="navbar-text">Store</NavLink>
                 <NavLink to="about" className="navbar-text">About</NavLink>
                 <NavLink to="cart" className="ml-auto"><FaShoppingCart /></NavLink>
-            </nav>      
+            </nav> 
             <Outlet />      
         </div>
     )

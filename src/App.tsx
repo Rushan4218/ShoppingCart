@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Store from "./pages/Store";
 import Cart from "./pages/Cart";
 
+
 const App: React.FC = () => {
 
     const router = createBrowserRouter(

@@ -1,7 +1,8 @@
+import StoreGrid from "../components/StoreGrid";
 
 const Store = () => {
     return (
-        <h2>This is the Store</h2>
+        <StoreGrid />
     )
 }
 
