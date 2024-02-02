@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Cart = () => {
     return (
-        <div className="m-8">
+        <div className="m-8 mt-20">
             <h2 className="text-4xl font-bold">Cart is empty, Add some items...</h2>
             <h3>Go to the <NavLink to="../store">Store</NavLink></h3>
         </div>

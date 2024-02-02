@@ -32,7 +32,7 @@
         },
         {
             "id": 6,
-            "name": "Knifeset",
+            "name": "Knife set",
             "image": "/images/knifeset.png",
             "price": 80
         },
@@ -50,7 +50,7 @@
         },
         {
             "id": 9,
-            "name": "Note Book",
+            "name": "Notebook",
             "image": "/images/notebook.png",
             "price": 10
         },

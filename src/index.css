@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .navbar-text {
-    @apply active:text-white select-none;
-} */
+.navbar-text {
+    @apply select-none font-bold;
+}
 
 body {
     background-color: rgb(238, 238, 238);
 }
-a.active {
-    color: white;
+
+.active {
+    @apply text-white;
 }
+

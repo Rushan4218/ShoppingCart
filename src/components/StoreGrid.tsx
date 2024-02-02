@@ -1,10 +1,10 @@
 import StoreItem from "./StoreItem";
 import data from "../data.json";
 
-const StoreGrid = () => {
 
+const StoreGrid = () => {
     return (
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-4 m-8">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-4 m-8 mt-20">
             {
                 data.items.map(item => {
                     return (

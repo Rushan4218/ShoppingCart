@@ -1,15 +1,10 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const RootLayout = () => {
     return (
         <div>
-            <nav className="bg-green-500 h-16 flex items-center gap-4 text-green-800 text-2xl px-6 sticky">
-                <NavLink to="/" className="navbar-text">Home</NavLink>
-                <NavLink to="store" className="navbar-text">Store</NavLink>
-                <NavLink to="about" className="navbar-text">About</NavLink>
-                <NavLink to="cart" className="ml-auto"><FaShoppingCart /></NavLink>
-            </nav> 
+            <Navbar/>
             <Outlet />      
         </div>
     )
