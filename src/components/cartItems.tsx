@@ -17,6 +17,7 @@ const CartItems = () => {
     const price = cartContent.price;
     const itemsQuantity = cartContent.itemsQuantity;
 
+    console.log(price);
 
     useEffect(() => {
         localStorage.setItem("CARTITEMS", JSON.stringify(cartItems));

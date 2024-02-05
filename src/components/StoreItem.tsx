@@ -19,8 +19,9 @@ const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price}) => {
 
     const value: string = useSelector((state: RootState) => state.userInput.value);
 
-    
     const cartItems: cartItemType[] = useSelector((state: RootState) => state.cartContent.cartItems);
+    const cartQuantity = useSelector((state: RootState) => state.cartContent.itemsQuantity);
+    const cartPrice = useSelector((state: RootState) => state.cartContent.price);
     
     const quantity = cartItems.find(item => id === item.id)?.quantity;
 
@@ -44,6 +45,15 @@ const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price}) => {
         localStorage.setItem("CARTITEMS", JSON.stringify(cartItems));
     }, [cartItems]);
     
+    useEffect(() => {
+        localStorage.setItem("ITEMSQUANTITY", JSON.stringify(cartQuantity));
+    }, [cartQuantity]);
+
+    useEffect(() => {
+        localStorage.setItem("PRICE", JSON.stringify(cartPrice));
+    }, [cartPrice]);
+
+
     return ( 
         <>
         {
