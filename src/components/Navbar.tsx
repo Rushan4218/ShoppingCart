@@ -10,7 +10,6 @@ const Navbar = () => {
 
     const dispatch = useDispatch();
     const userInput: string = useSelector((state: RootState) => state.userInput.value)
-    console.log(userInput)
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
     }

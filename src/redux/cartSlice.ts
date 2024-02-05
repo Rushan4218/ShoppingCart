@@ -5,22 +5,30 @@ export type cartItemType = {
     quantity: number
 }
 
+const cartItemsString: string | null = localStorage.getItem("CARTITEMS");
+const priceString: string | null = localStorage.getItem("PRICE");
+const itemsQuantityString: string | null = localStorage.getItem("ITEMSQUANTITY");
+
 const cartSlice = createSlice({
     name: "cartContent",
     initialState: {
-        cartItems: [] as cartItemType[],
-        price: 0,
-        itemsQuantity: 0
+        cartItems: (cartItemsString == null) ? [] : JSON.parse(cartItemsString) as cartItemType[],
+        price: (priceString == null) ? 0 : JSON.parse(priceString),
+        itemsQuantity: (itemsQuantityString == null) ? 0 : JSON.parse(itemsQuantityString)
+        // cartItems: [] as cartItemType[],
+        // price: 0,
+        // itemsQuantity: 0
     },
     reducers: {
         addItem: (state, action) => {
-            const {id, itemPrice} = action.payload;
+            const {id, price} = action.payload;
             state.cartItems = [...state.cartItems, {id, quantity: 1}]
-            state.price += itemPrice;
+            state.price += price;
             state.itemsQuantity++;
         },
         increaseQuantity: (state, action) => {
-            const {id, itemPrice} = action.payload;
+            const {id, price} = action.payload;
+            console.log(price);
             if (state.cartItems.find(item => item.id === id) == null) {
                 state.cartItems = [...state.cartItems, {id , quantity: 1}]
             } else {
@@ -31,11 +39,11 @@ const cartSlice = createSlice({
                 })
             }
 
-            state.price += itemPrice;
+            state.price += price;
             state.itemsQuantity++;
         },
         decreaseQuantity: (state, action) => {
-            const {id, itemPrice} = action.payload;
+            const {id, price} = action.payload;
             
             if (state.cartItems.find(item => item.id === id)?.quantity === 1) {
                 state.cartItems = state.cartItems.filter(item => item.id !== id)
@@ -46,17 +54,20 @@ const cartSlice = createSlice({
                     } else return item;
                 })
             }
-            state.price -= itemPrice;
+            state.price -= price;
             state.itemsQuantity--;
         },
         removeItem: (state, action) => {
-            const {id, itemPrice, quantity} = action.payload;
+            const {id, price, quantity} = action.payload;
             state.cartItems = state.cartItems.filter(item => item.id !== id);
-            state.price -= itemPrice * quantity;
+            state.price -= price * quantity;
             state.itemsQuantity -= quantity;
+        },
+        clearCart: (state) => {
+            state.cartItems.length = 0;
         }
     }
 })
 
-export const { addItem, increaseQuantity, decreaseQuantity, removeItem } = cartSlice.actions;
+export const { addItem, increaseQuantity, decreaseQuantity, removeItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

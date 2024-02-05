@@ -25,6 +25,7 @@ const App: React.FC = () => {
             </Route>
         )
     )
+
     return (
         <RouterProvider router={router} />
     )

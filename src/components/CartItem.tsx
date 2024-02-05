@@ -13,20 +13,20 @@ type cartItemProps = {
 
 const CartItem: React.FC<cartItemProps> = ({ id, quantity }) => {
 
-    const itemPrice = data.items.find(item => item.id === id)?.price;
+    const price = data.items.find(item => item.id === id)?.price;
     
     const dispatch = useDispatch()
 
     const handleIncrease = () => {
-        dispatch(increaseQuantity({id, itemPrice}));
+        dispatch(increaseQuantity({id, price}));
     }
 
     const handleDecrease = () => {
-        dispatch(decreaseQuantity({id, itemPrice}));
+        dispatch(decreaseQuantity({id, price}));
     }
     
     const handleRemove = () => {
-        dispatch(removeItem({id, itemPrice, quantity}));
+        dispatch(removeItem({id, price, quantity}));
     }
 
     const currentItem = data.items.find(item => item.id === id);
@@ -35,7 +35,7 @@ const CartItem: React.FC<cartItemProps> = ({ id, quantity }) => {
         <>
             {
                 currentItem && (
-                    <div className="h-16 bg-white flex items-center justify-between w-11/12 max-w-4xl self-center rounded-2xl p-2">
+                    <div className="h-16 bg-white flex items-center justify-between w-11/12 max-w-4xl self-center rounded-2xl p-2 shadow-md shadow-gray-400">
                         <div className="h-full flex justify-center items-center w-16 rounded-2xl">
                             <img 
                                 className="h-full"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { IoIosAdd } from "react-icons/io";
@@ -15,8 +15,7 @@ type singleItemProps = {
     name: string,
     price: number
 }
-const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price }) => {
-
+const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price}) => {
 
     const value: string = useSelector((state: RootState) => state.userInput.value);
 
@@ -33,7 +32,6 @@ const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price }) => {
     const handleIncrease = () => {
         dispatch(increaseQuantity({id, price}));
     }
-
     const handleDecrease = () => {
         dispatch(decreaseQuantity({id, price}));
     }
@@ -42,6 +40,10 @@ const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price }) => {
         dispatch(removeItem({id, price, quantity}));
     }
 
+    useEffect(() => {
+        localStorage.setItem("CARTITEMS", JSON.stringify(cartItems));
+    }, [cartItems]);
+    
     return ( 
         <>
         {
@@ -59,7 +61,7 @@ const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price }) => {
                     <div className="h-10">
                         {
                             (!quantity) ? (
-                                <button onClick={(handleAdd)} className="bg-green-400 w-full font-bold text-white rounded hover:bg-green-500 active:scale-90 transition-transform h-full shadow-md active:shadow shadow-gray-400">Add to cart</button> 
+                                <button onClick={handleAdd} className="bg-green-400 w-full font-bold text-white rounded hover:bg-green-500 active:scale-90 transition-transform h-full shadow-md active:shadow shadow-gray-400">Add to cart</button> 
                             ) : (
                                 <div className="h-full w-full flex items-center gap-4">
                                     <div className="flex items-center gap-4 flex-1 bg-gray-200 justify-between h-full rounded-2xl">
