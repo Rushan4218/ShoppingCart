@@ -11,21 +11,22 @@ type cartItemProps = {
     quantity: number
 }
 
-
-
-
 const CartItem: React.FC<cartItemProps> = ({ id, quantity }) => {
+
+    const itemPrice = data.items.find(item => item.id === id)?.price;
     
     const dispatch = useDispatch()
 
     const handleIncrease = () => {
-        dispatch(increaseQuantity(id));
+        dispatch(increaseQuantity({id, itemPrice}));
     }
+
     const handleDecrease = () => {
-        dispatch(decreaseQuantity(id));
+        dispatch(decreaseQuantity({id, itemPrice}));
     }
+    
     const handleRemove = () => {
-        dispatch(removeItem(id));
+        dispatch(removeItem({id, itemPrice, quantity}));
     }
 
     const currentItem = data.items.find(item => item.id === id);

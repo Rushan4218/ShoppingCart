@@ -17,6 +17,7 @@ type singleItemProps = {
 }
 const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price }) => {
 
+
     const value: string = useSelector((state: RootState) => state.userInput.value);
 
     
@@ -25,23 +26,20 @@ const SingleItem: React.FC<singleItemProps> = ({ id, image, name, price }) => {
     const quantity = cartItems.find(item => id === item.id)?.quantity;
 
     const dispatch = useDispatch();
-
-
+    
     const handleAdd = () => {
-        dispatch(addItem(id));
-        console.log(cartItems);
+        dispatch(addItem({id, price}));
     }
     const handleIncrease = () => {
-        dispatch(increaseQuantity(id));
-    }
-    
-    const handleDecrease = () => {
-        dispatch(decreaseQuantity(id));
+        dispatch(increaseQuantity({id, price}));
     }
 
+    const handleDecrease = () => {
+        dispatch(decreaseQuantity({id, price}));
+    }
+    
     const handleRemove = () => {
-        console.log("hi")
-        dispatch(removeItem(id));
+        dispatch(removeItem({id, price, quantity}));
     }
 
     return ( 
